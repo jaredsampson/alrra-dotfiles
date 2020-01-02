@@ -1,5 +1,8 @@
-[Cătălin][repo]’s dotfiles
-==========================
+Jared's dotfiles
+================
+
+(Forked from [Cătălin][repo]’s dotfiles)
+----------------------------------------
 
 [![Build Status][ci badge]][ci link]
 
@@ -31,6 +34,15 @@ To set up the `dotfiles` run the appropriate snippet in the terminal:
 (⚠️  **DO NOT** run the `setup` snippet if you do not fully understand
 [what it does][setup]. Seriously, **DON'T**!)
 
+### For Jared's forked-and-modified dotfiles
+| OS | Snippet |
+|:---|:---|
+| `macOS` | `bash -c "$(curl -LsS https://raw.github.com/jaredsampson/dotfiles/jaredsampson/src/os/setup.sh)"` |
+
+(Ubuntu script not modified at all yet.)
+
+
+### For Cătălin's original dotfiles
 | OS | Snippet |
 |:---|:---|
 | `macOS` | `bash -c "$(curl -LsS https://raw.github.com/alrra/dotfiles/master/src/os/setup.sh)"` |
