@@ -10,5 +10,5 @@ print_in_purple "\n   Language & Region\n\n"
 execute "defaults write -g AppleLanguages -array 'en'" \
     "Set language"
 
-execute "defaults write -g AppleMeasurementUnits -string 'Centimeters'" \
+execute "defaults write -g AppleMeasurementUnits -string 'Inches'" \
     "Set measurement units"
