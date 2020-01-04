@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-print_in_purple "\n   Chrome\n\n"
+print_purple_header "Chrome"
 
 execute "defaultbrowser chrome" \
     "Set default browser to Google Chrome"

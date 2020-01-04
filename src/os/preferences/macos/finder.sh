@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-print_in_purple "\n   Finder\n\n"
+print_purple_header "Finder"
 
 execute "chflags nohidden ~/Library/" \
     "Show the ~/Library folder"
