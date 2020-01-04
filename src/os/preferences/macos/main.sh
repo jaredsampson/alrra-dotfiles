@@ -19,6 +19,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 ./keyboard.sh
 ./language_and_region.sh
 ./maps.sh
+./mission_control.sh
 ./photos.sh
 ./safari.sh
 ./terminal.sh
