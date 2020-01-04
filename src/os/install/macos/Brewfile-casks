@@ -1,0 +1,85 @@
+# Cask setup
+tap "homebrew/cask"
+cask_args appdir: "/Applications"
+
+### CASKS ###
+
+# Essentials
+cask "1password"
+cask "dropbox"
+cask "xquartz"
+
+# Productivity
+cask "bettertouchtool"
+cask "evernote"
+cask "hazel"
+cask "jumpcut"
+cask "keycue"
+cask "moom"
+cask "nvalt"
+cask "popchar"
+cask "typinator"
+
+# Backup
+cask "backblaze"
+cask "backblaze-downloader"
+cask "backuploupe"
+cask "superduper"
+
+# Document apps
+cask "adobe-acrobat-reader"
+cask "libreoffice"
+cask "macdown"
+cask "mactex"
+cask "marked"
+
+# Web browsers
+cask "firefox"
+cask "google-chrome"
+cask "opera"
+
+# Developer
+cask "bbedit"
+cask "iterm2"
+cask "macvim"
+cask "mamp"
+cask "shellhere"
+cask "sourcetree"
+cask "sublime-text"
+
+# Scientific apps
+cask "miniconda"
+cask "findings"
+cask "rstudio"
+
+# Misc utils
+cask "chicken"
+cask "coconutbattery"
+cask "delayedlauncher"
+cask "geekbench"
+cask "iexplorer"
+cask "macfusion-ng"
+cask "osxfuse"
+cask "sensiblesidebuttons"
+cask "teensy"
+
+# Quicklook
+cask "qlcolorcode"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "quicklook-csv"
+cask "quicklook-json"
+
+# Audio/Visual
+cask "audio-hijack"
+cask "handbrake"
+cask "imagealpha"
+cask "imageoptim"
+cask "lilypond"
+cask "macx-dvd-ripper-pro"
+cask "macx-youtube-downloader"
+cask "musescore"
+cask "plex-media-player"
+cask "skype"
+cask "spotify"
+cask "vlc"

@@ -1,0 +1,114 @@
+### Brews ###
+
+tap "brewsci/bio"
+tap "bramstein/webfonttools"
+tap "brewsci/bio"
+tap "eddieantonio/eddieantonio"
+tap "mistertea/et"
+tap "salilab/salilab"
+
+# Essentials
+brew "bash"
+brew "bash-completion@2"
+brew "git"
+brew "mackup"
+brew "vim"   # or macvim
+
+# Base utils
+brew "binutils"
+brew "coreutils"
+brew "curl"
+brew "curl-openssl"
+brew "findutils"
+brew "gnu-sed"
+brew "grep"
+brew "most"
+brew "moreutils"
+brew "wget"
+
+# Audio/Visual
+brew "imagemagick"
+brew "ffmpeg"
+brew "youtube-dl"
+
+# Backup/Sync
+brew "restic"
+brew "rsync"
+brew "unison"
+
+# Compression/Encryption
+brew "mcrypt"
+brew "sha2"
+
+# Development
+brew "hub"
+brew "neovim"
+brew "shellcheck"
+brew "sloccount", args: ["with-coreutils"]
+brew "sphinx-doc"
+brew "subversion"
+
+# Fonts
+brew "bramstein/webfonttools/sfnt2woff"
+brew "bramstein/webfonttools/sfnt2woff-zopfli"
+brew "bramstein/webfonttools/woff2"
+
+# Misc utils
+brew "defaultbrowser"
+brew "dos2unix"
+brew "duti"
+brew "htop"
+brew "eddieantonio/eddieantonio/imgcat"
+brew "mas"
+brew "rename"
+brew "speedtest-cli"
+brew "tree"
+
+# Remote access
+brew "mistertea/et/et"
+brew "mosh"
+brew "tmux"
+brew "reattach-to-user-namespace"
+brew "openssh"
+brew "screen"
+brew "sshfs"
+brew "ssh-copy-id"
+
+# Scientific/Academic
+brew "brewsci/bio/clustal-omega"
+brew "brewsci/bio/clustal-w"
+brew "gnuplot"
+brew "hugo"
+brew "igraph"
+brew "salilab/salilab/hdf5@1.8.20"
+brew "salilab/salilab/ifort-runtime"
+brew "brewsci/bio/matplotlib"
+brew "brewsci/bio/mmtf-cpp"
+brew "brewsci/bio/muscle"
+brew "brewsci/bio/pymol"
+brew "pandoc-citeproc"
+brew "pandoc-crossref"
+brew "r"
+
+# Dependencies?
+# brew "aspell"
+# brew "automake"
+# brew "boost"
+# brew "cmake"
+# brew "figlet"
+# brew "freetds"
+# brew "geckodriver"
+# brew "ghostscript"
+# brew "libidn"
+# brew "libpq"
+# brew "libzip"
+# brew "netcdf"
+# brew "node"
+# brew "open-babel"
+# brew "pkg-config"
+# brew "py3cairo"
+# brew "rlwrap"
+# brew "swig"
+# brew "tcl-tk"
+# brew "tidy-html5"
+
