@@ -229,6 +229,10 @@ print_in_purple() {
     print_in_color "$1" 5
 }
 
+print_purple_header() {
+    print_in_purple "\n   $1\n\n"
+}
+
 print_in_red() {
     print_in_color "$1" 1
 }
