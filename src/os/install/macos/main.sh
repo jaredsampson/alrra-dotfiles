@@ -12,6 +12,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 # use `brew bundle`
 ./brews.sh
 ./casks.sh
+./mas.sh
 
 ./bash.sh
 ../vim.sh
