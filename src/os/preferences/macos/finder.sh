@@ -7,6 +7,9 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 print_in_purple "\n   Finder\n\n"
 
+execute "chflags nohidden ~/Library/" \
+    "Show the ~/Library folder"
+
 execute "defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true && \
          defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true && \
          defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true" \
@@ -71,6 +74,10 @@ execute "/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:s
 execute "/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:arrangeBy none' ~/Library/Preferences/com.apple.finder.plist && \
          /usr/libexec/PlistBuddy -c 'Set :StandardViewSettings:IconViewSettings:arrangeBy none' ~/Library/Preferences/com.apple.finder.plist" \
     "Set sort method"
+
+# Quick Look text selection is not available in macOS 10.11+
+# execute "defaults write com.apple.finder QLEnableTextSelection -bool TRUE" \
+#     "Enable Quick Look text selection"
 
 killall "Finder" &> /dev/null
 
