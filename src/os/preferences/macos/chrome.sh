@@ -7,6 +7,9 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 print_in_purple "\n   Chrome\n\n"
 
+execute "defaultbrowser chrome" \
+    "Set default browser to Google Chrome"
+
 execute "defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false" \
     "Disable backswipe"
 
