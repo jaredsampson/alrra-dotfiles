@@ -18,6 +18,7 @@ cask "keycue"
 cask "moom"
 cask "nvalt"
 cask "popchar"
+cask "setapp"
 cask "typinator"
 
 # Backup
