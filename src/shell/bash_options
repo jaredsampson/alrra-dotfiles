@@ -9,6 +9,10 @@
 
 shopt -s autocd
 
+# Smart globbing (e.g. **/*.txt globs recursively)
+
+shopt -s globstar
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Autocorrect typos in path names when using the `cd` command.
