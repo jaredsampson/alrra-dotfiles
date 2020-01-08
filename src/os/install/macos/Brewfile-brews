@@ -41,6 +41,7 @@ brew "mcrypt"
 brew "sha2"
 
 # Development
+brew "ctags"
 brew "hub"
 brew "neovim"
 brew "shellcheck"
