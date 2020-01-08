@@ -2,21 +2,44 @@
 
     a   = commit --amend
     br  = branch
-    c   = commit
-    ca  = !git add -A && git commit             # Commit all changes.
+    # c   = commit
+    # ca  = !git add -A && git commit             # Commit all changes.
     co  = checkout
     cp  = cherry-pick
     d   = diff -- . ':!*package-lock.json' ':!*yarn.lock'
     dc  = diff --cached -- . ':!*package-lock.json' ':!*yarn.lock'
-    f   = fetch
-    g   = log --graph --pretty=custom           # Show custom graph.
-    git = !exec git                             # Allow `$ git git git...`
-    l   = log --pretty=custom                   # Show custom log.
-    lc  = shortlog --email --numbered --summary # List contributors.
-    p   = push
-    r   = rebase
+    # f   = fetch
+    # g   = log --graph --pretty=custom           # Show custom graph.
+    # git = !exec git                             # Allow `$ git git git...`
+    # l   = log --pretty=custom                   # Show custom log.
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    # lc  = shortlog --email --numbered --summary # List contributors.
+    # p   = push
+    # r   = rebase
     s   = status
-    w   = instaweb --httpd=webrick              # Start web-based visualizer.
+    st  = status
+    # w   = instaweb --httpd=webrick              # Start web-based visualizer.
+
+    # Amend the currently staged files to the latest commit
+    amend = commit --amend --reuse-message=HEAD
+
+    # Switch to a branch, creating it if necessary
+    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+
+    # Credit an author on the latest commit
+    credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+
+    # Interactive rebase with the given number of latest commits
+    reb = "!r() { git rebase -i HEAD~$1; }; r"
+
+    # Remove the old tag with this name and tag the latest commit with it.
+    retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -113,37 +136,64 @@
         git reset --soft \"HEAD~$n\"; \
     }; f"
 
+[color]
+
+    # Use colors in Git commands that are capable of colored output when
+    # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+    ui = auto
 
 [color "branch"]
 
-    current = green bold
-    local = green
-    remote = yellow
+    current = yellow reverse
+    local = yellow
+    remote = green
 
 [color "diff"]
 
-    frag = magenta
-    meta = yellow
-
+    frag = magenta bold
+    meta = yellow bold
     new = green
     old = red
-
     newMoved = cyan
     oldMoved = blue
 
 [color "status"]
 
-    added = green reverse
-    changed = yellow reverse
-    untracked = red reverse
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[commit]
+
+    # https://help.github.com/articles/signing-commits-using-gpg/
+    gpgsign = false
+    template = ~/.stCommitMsg
 
 [core]
 
-    abbrev = 12
     attributesfile = ~/.gitattributes
+    excludesfile = ~/.gitignore
+
+    abbrev = 12
     autocrlf = input
     editor = vim
-    excludesfile = ~/.gitignore
+    fileMode = false
+    filemode = false
+
+
+    # Treat spaces before tabs and all kinds of trailing whitespace as an error
+    # [default] trailing-space: looks for spaces at the end of a line
+    # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+    whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+    # Make `git rebase` safer on macOS
+    # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+    trustctime = false
+
+    # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+    # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+    precomposeunicode = false
+
 
 [diff]
 
@@ -154,11 +204,24 @@
 
     colorMoved = zebra
 
+    # Detect copies as well as renames
+    renames = copies
+
 [diff "bin"]
 
     # Use `hexdump` to diff binary files.
 
     textconv = hexdump -v -C
+
+[help]
+
+    # Automatically correct and execute mistyped commands
+    autocorrect = 1
+
+[merge]
+
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
 
 [pretty]
 
