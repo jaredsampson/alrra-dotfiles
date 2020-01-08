@@ -97,6 +97,14 @@ get_git_repository_details() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+function prompt_conda() {
+    if [[ ! -z "${CONDA_DEFAULT_ENV}" ]]; then
+        echo -e "($(basename ${CONDA_DEFAULT_ENV})) ";
+    fi;
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 set_prompts() {
 
     local bold=$(tput bold 2> /dev/null)
@@ -128,6 +136,9 @@ set_prompts() {
     # Prompt Statement variables.
     # http://ss64.com/bash/syntax-prompt.html
 
+    # executed before setting prompt (move newline before conda env)
+    PROMPT_COMMAND="printf '\n'"
+
     # ------------------------------------------------------------------
     # | PS1 - Default interactive prompt                               |
     # ------------------------------------------------------------------
@@ -137,9 +148,9 @@ set_prompts() {
 
     PS1+="$reset$bold"
     PS1+="$orange\u"        # Username
-    PS1+="$white@"
+    PS1+="$white at "
     PS1+="$yellow\h"        # Host
-    PS1+="$white: "
+    PS1+="$white in "
     PS1+="$green\w"         # Working directory
     PS1+="\$(get_git_repository_details \"$white on $cyan\")"
     PS1+="\n"
