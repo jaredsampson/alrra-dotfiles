@@ -19,6 +19,7 @@ cask "moom"
 cask "nvalt"
 cask "popchar"
 cask "setapp"
+cask "thingsmacsandboxhelper"
 cask "typinator"
 
 # Backup
