@@ -25,9 +25,9 @@ execute "defaults write com.apple.dock mineffect -string 'scale'" \
 execute "defaults write com.apple.dock minimize-to-application -bool true" \
     "Reduce clutter by minimizing windows into their application icons"
 
-execute "defaults write com.apple.dock persistent-apps -array && \
-         defaults write com.apple.dock persistent-others -array " \
-    "Wipe all app icons"
+# execute "defaults write com.apple.dock persistent-apps -array && \
+#          defaults write com.apple.dock persistent-others -array " \
+#     "Wipe all app icons"
 
 execute "defaults write com.apple.dock show-process-indicators -bool true" \
     "Show indicator lights for open applications"
