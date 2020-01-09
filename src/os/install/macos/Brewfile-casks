@@ -50,8 +50,9 @@ cask "sourcetree"
 cask "sublime-text"
 
 # Scientific apps
-cask "miniconda"
 cask "findings"
+cask "miniconda"
+cask "papers"
 cask "rstudio"
 
 # Misc utils
