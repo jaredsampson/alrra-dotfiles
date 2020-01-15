@@ -12,6 +12,7 @@ cask "xquartz"
 # Productivity
 cask "bettertouchtool"
 cask "evernote"
+cask "go2shell"
 cask "hazel"
 cask "jumpcut"
 cask "keycue"
