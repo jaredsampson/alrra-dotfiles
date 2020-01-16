@@ -24,6 +24,7 @@ install_homebrew() {
         "Install Homebrew"
 }
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 setapp_is_installed() {
     [ -d "/Applications/Setapp.app" ]
@@ -38,7 +39,7 @@ finish_setapp_installation() {
     local version=$(get_setapp_version)
     local installer="/usr/local/Caskroom/setapp/$version/Install Setapp.app"
 
-    if ! [ setapp_is_installed ]; then
+    if ! setapp_is_installed; then
         if [ -d "$installer" ]; then
             open "$installer"
         fi
