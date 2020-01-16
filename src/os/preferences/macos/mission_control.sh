@@ -16,7 +16,7 @@ execute "defaults write com.apple.dock expose-group-apps -bool true" \
 execute "defaults write com.apple.dock mru-spaces -bool false" \
     "Do not automatically rearrange spaces based on most recent use"
 
-execute "defaults write com.apple.dock spans-displays -bool false" \
+execute "defaults write com.apple.dock spans-displays -bool true" \
     "Disable \"Displays have separate Spaces\""
 
 execute "defaults write com.apple.dock expose-animation-duration -float 0.12" \
