@@ -1,6 +1,10 @@
 # Cask setup
 tap "homebrew/cask"
 cask_args appdir: "/Applications"
+cask_args fontdir: "/Library/Fonts"
+cask_args prefpanedir: "/Library/PreferencePanes"
+cask_args qlplugindir: "/Library/QuickLook"
+cask_args servicedir: "/Library/Services"
 
 ### CASKS ###
 
