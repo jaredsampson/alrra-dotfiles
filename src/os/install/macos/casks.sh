@@ -55,6 +55,35 @@ finish_setapp_installation() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+backblaze_is_installed() {
+    [ -d "/Applications/Backblaze.app" ]
+}
+
+get_backblaze_version() {
+    brew cask info backblaze | grep "backblaze:" | awk '{print $2}'
+}
+
+finish_backblaze_installation() {
+
+    local version=$(get_backblaze_version)
+    local installer="/usr/local/Caskroom/backblaze/${version}/Backblaze Installer.app"
+
+    if ! backblaze_is_installed; then
+        if [ -d "$installer" ]; then
+            open "$installer"
+        fi
+    fi
+
+    execute \
+        "until backblaze_is_installed; do \
+            sleep 5; \
+         done" \
+        "Finish Backblaze installation"
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 main() {
 
     print_in_purple "   Casks\n\n"
@@ -63,6 +92,7 @@ main() {
     brew bundle --no-lock --file=Brewfile-casks
 
     finish_setapp_installation
+    finish_backblaze_installation
 
 }
 
