@@ -54,6 +54,12 @@ execute "defaults write com.apple.finder ShowRecentTags -bool false" \
 execute "defaults write -g AppleShowAllExtensions -bool true" \
     "Show all filename extensions"
 
+execute "defaults write com.apple.finder ShowStatusBar -bool true" \
+    "Show status bar"
+
+execute "defaults write com.apple.finder ShowPathbar -bool true" \
+    "Show path bar"
+
 execute "/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:arrangeBy grid' ~/Library/Preferences/com.apple.finder.plist && \
          /usr/libexec/PlistBuddy -c 'Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid' ~/Library/Preferences/com.apple.finder.plist && \
          /usr/libexec/PlistBuddy -c 'Set :StandardViewSettings:IconViewSettings:arrangeBy grid' ~/Library/Preferences/com.apple.finder.plist" \
