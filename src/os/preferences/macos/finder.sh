@@ -33,6 +33,9 @@ execute "defaults write com.apple.finder FXEnableExtensionChangeWarning -bool fa
 execute "defaults write com.apple.finder FXPreferredViewStyle -string 'Nlsv'" \
     "Use list view in all Finder windows by default"
 
+execute "defaults write com.apple.finder QuitMenuItem -bool true" \
+    "Allow quitting Finder via ⌘ + Q"
+
 # PfDe = Desktop
 # PfLo = use NewWindowTargetPath setting
 execute "defaults write com.apple.finder NewWindowTarget -string 'PfLo' && \
