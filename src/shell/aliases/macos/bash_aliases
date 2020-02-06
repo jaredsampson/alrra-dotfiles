@@ -53,12 +53,6 @@ alias local-ip="ipconfig getifaddr en1"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Open from the terminal.
-
-alias o="open"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Update applications and CLTs.
 
 # alias u="sudo softwareupdate --install --all \
