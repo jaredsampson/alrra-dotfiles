@@ -22,9 +22,12 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mbbill/undotree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'plasticboy/vim-markdown'
+" Plugin 'vim-pandoc/vim-rmarkdown'
 Plugin 'jaredsampson/vim-pymol'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'cespare/vim-toml'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'severin-lemaignan/vim-minimap'
 call vundle#end()
 
 " ----------------------------------------------------------------------
@@ -515,7 +518,7 @@ if has("autocmd")
 
         " Markdown and R Markdown
         autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
-        autocmd BufNewFile,BufRead *.Rmd setlocal filetype=rmarkdown
+        autocmd BufNewFile,BufRead *.Rmd setlocal filetype=rmd
 
         autocmd BufNewFile,BufRead *.rstheme setlocal filetype=css
         autocmd BufNewFile,BufRead *.toml setlocal filetype=toml
